@@ -4,7 +4,7 @@ https://huggingface.co/datasets/Salesforce/wikitext
 Downloads and tokenizes the data and saves data shards to disk.
 Run simply as:
 
-python3 -u "fineweb copy.py"
+python3 -u "fineweb_copy.py"
 
 Will clean the caching, then save shards to the local directory "edu_fineweb10B".
 """
@@ -20,11 +20,7 @@ from tqdm import tqdm  # pip install tqdm
 dataset_repo = "Salesforce/wikitext"
 dataset_config = "wikitext-2-raw-v1"
 local_dir = "edu_fineweb10B"  # kept for train_gpt2.py compatibility
-<<<<<<< Updated upstream
-shard_size = int(1e6)  # 1M tokens per shard, suitable for local machines
-=======
-shard_size = int(1e5)  # 1M tokens per shard, suitable for local machines
->>>>>>> Stashed changes
+shard_size = int(1e5)  
 
 # create the cache the local directory if it doesn't exist yet
 DATA_CACHE_DIR = os.path.join(os.path.dirname(__file__), local_dir)
